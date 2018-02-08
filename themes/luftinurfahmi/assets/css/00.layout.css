@@ -1,0 +1,106 @@
+*{
+	margin:0 auto;
+	padding:0;
+}
+
+html{
+	position:relative;
+	min-height:100%;
+}
+
+body{
+	
+	font-family:"Raleway", sans-serif;
+	
+}
+a:hover{
+	text-decoration:none;
+}
+
+.highlight{
+	font-family: 'Montserrat', sans-serif;
+	font-weight:500;
+}
+
+.heading-section{
+	float:left;
+	max-width:360px;
+	width:100%;
+	margin-bottom:15px;
+}
+
+.heading-section > .lbl-icon{
+	background-color:#750000;
+	float:left;
+	width:80px;
+	height:80px;
+	line-height:85px;
+	color:#FFFFFF;
+	text-align:center;
+	margin-right:15px;
+}
+.heading-section > .lbl-icon > i{
+	font-size:2.5em;
+}
+.heading-section > .heading-text > .title{
+	margin-top:15px;
+	font-weight:700;
+	font-family:"Montserrat", sans-serif;
+}
+.heading-section > .heading-text > .title > span{
+	display:block;
+	font-size:.5em;
+	font-weight:300;
+	padding:5px 0;
+}
+
+.content-section{
+	clear:both;
+	padding-top:15px;
+}
+
+/* SERVICES */
+.services{
+	width:100%;
+	padding:15px 0px;
+	overflow:hidden;
+}
+.services > .service-item{
+	float:left;
+	padding-top:15px;
+}
+/* SERVICES COL 3 */
+.services.col-3 > .service-item{
+	width:calc(100%/3);	
+}
+/* SERVICES COL 4 */
+.services.col-4 > .service-item{
+	width:calc(100%/4);
+}
+/* SERVICES COL 5 */
+.services.col-5 > .service-item{
+	width:calc(100%/5);
+}
+/* SERVICES COL 6 */
+.services.col-6 > .service-item{
+	width:calc(100%/6);
+}
+
+.services > .service-item > *{
+	display:block;
+	text-align:center;
+}
+.services > .service-item > i{
+	font-size:2.5em;
+}
+.services > .service-item > span{
+	padding-top:15px;
+}
+
+/* CLIENTS */
+.clients{
+}
+
+.clients-item{
+	padding:15px;
+}

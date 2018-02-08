@@ -1,0 +1,29 @@
+.gallery-item > .thumbs{
+	
+	height:180px;
+	overflow:hidden;
+	position:relative;
+	border:1px solid #CCD0DB;
+	margin-bottom:5px;
+}
+
+.gallery-item > .thumbs > a#deletePhotos{
+	position:absolute;
+	right:0;
+	top:0;
+	color:#FFFFFF;
+	display:block;
+	width:32px;
+	height:32px;
+	text-align:center;
+	line-height:32px;
+	background-color:#0088CC;
+	border-bottom-left-radius: 10px;
+}
+
+.gallery-item > .thumbs > img{
+	width:100%;
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position:50% 50%;
+}

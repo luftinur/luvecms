@@ -1,0 +1,21 @@
+#featuredImage{
+	cursor:pointer;
+	background-image:url(../images/icon-camera.png);
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-color:#ebebeb;
+	background-position:50% 50%;
+}
+#featuredImage:hover > div{
+	border-color:#0088CC;
+}
+#featuredImage > div{
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position:50% 50%;
+	height:200px;
+	width:100%;
+	
+	border:1px solid #CCD0DB;
+	
+}
