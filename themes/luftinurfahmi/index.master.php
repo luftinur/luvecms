@@ -18,7 +18,8 @@
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600" rel="stylesheet"> 
 		
 		<link rel="stylesheet" href="<?php echo $templateUrl; ?>/vendor/bootstrap/css/bootstrap.min.css" type="text/css" media="all" />
-		<link rel="stylesheet" href="<?php echo $templateUrl; ?>/vendor/fontawesome/css/font-awesome.min.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="<?php echo $templateUrl; ?>/vendor/fontawesome/css/fontawesome.min.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="<?php echo $templateUrl; ?>/vendor/fontawesome/css/fa-brands.min.css" type="text/css" media="all" />
 		<link rel="stylesheet" href="<?php echo $templateUrl; ?>/assets/fonts/lineicons/lineicons.css" type="text/css" media="all" />	
 		
 		
@@ -59,7 +60,17 @@
 		
 		<div id="footer">
 			<div class="container">
-				
+				<div class="col-md-6">
+					<p class="copyright"><?php echo "&copy;".date("Y"); ?> <a href="<?php echo base_url(); ?>">www.luftinurfahmi.net</a> - All Right Reserved</p>
+				</div>
+				<div class="col-md-6">
+					<ul class="social">
+						<li><a href=""><i class="fab fa-linkedin"></i></a></li>
+						<li><a href=""><i class="fab fa-github"></i></a></li>
+						<li><a href=""><i class="fab fa-behance"></i></a></li>
+						
+					</ul>
+				</div>
 			</div>
 		</div>
 	
