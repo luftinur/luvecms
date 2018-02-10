@@ -162,7 +162,8 @@ if(!function_exists("safeUrlText")){
 		return $string;
 	}
 
-	function image_thumb( $image_path, $height, $width ) {
+	function image_thumb($image_path, $height, $width ) {
+		
 	    // Get the CodeIgniter super object
 	    $CI =& get_instance();
 	

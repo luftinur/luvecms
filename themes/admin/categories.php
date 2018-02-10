@@ -5,7 +5,6 @@
 			
 			<div class="left-heading">
 				<h3 class="title" style="text-transform:capitalize;"><?php echo $pageTitle; ?></h3>
-				<a href="<?php echo base_url().'admin/posts/new'; ?>" class="btn btn-sm btn-default">Add New</a>
 			</div>		
 		
 						

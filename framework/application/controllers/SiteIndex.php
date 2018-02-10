@@ -1,14 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class SiteIndex extends MY_Controller{
+class SiteIndex extends MY_ContentBase{
 	
 	
 	function __construct(){
 		
-		$this->showPopupAds = true;
 		parent::__construct();		
-		
 
 	}
 	
@@ -20,7 +18,8 @@ class SiteIndex extends MY_Controller{
 		$this->data['pageStyle'][] = addStyle(base_url().'themes/'.$this->config->item("theme").'/vendor/owlcarousel/assets/owl.theme.default.min.css');		
 		
 		$this->data['contentFilename'] = "home";
-						
+		$this->data['freebies'] = $this->getPosts('freebies', 4);
+		$this->data['freebies_category'] = $this->MY_Model->getObjects("SELECT * FROM #__taxonomy WHERE postType='freebies' AND status = 1");		
 		parent::render($this->data);		
 		
 		

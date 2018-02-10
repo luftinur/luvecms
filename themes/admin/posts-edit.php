@@ -21,7 +21,7 @@
 							<input placeholder="Title" type="text" class="form-control no-resize" id="inputTitle" value="<?php echo $content->title; ?>" />
 						</div>
 						<div class="form-group">
-							<small>Permalink : <?php echo base_url(); ?><?php echo $content->category > 0 ? $content->categoryName.'/'.$content->path: "uncategorized/"; ?></small>
+							<small>Permalink : <a target="_blank" href="<?php echo base_url(); ?><?php echo $content->category > 0 ? $content->categoryName.'/'.$content->path: "uncategorized/"; ?>"><?php echo base_url(); ?><?php echo $content->category > 0 ? $content->categoryName.'/'.$content->path: "uncategorized/"; ?></a></small>
 						</div>
 						<div class="form-group">
 							<textarea class="form-control" id="inputBody" rows="10"><?php echo $content->body; ?></textarea>
@@ -136,17 +136,36 @@
 				<div class="panel-body">
 					<select id="inputCategories" class="form-control">
 						<option value="0">Uncategorized</option>
-						<?php foreach($categories as $term){ ?> 
-							<?php if($term->parent != 0){ ?> 
-								<?php if($term->id == $content->category){ ?> 
-									<option value="<?php echo $term->id; ?>" selected><?php echo $term->title; ?></option>
-								<?php }else{ ?> 
-									<option value="<?php echo $term->id; ?>"><?php echo $term->title; ?></option>
+						<?php if($haveSubcategory){ ?> 
+							
+							<?php foreach($categories as $term){ ?> 
+							
+									<?php if($term->id == $content->category){ ?> 
+										<option value="<?php echo $term->id; ?>" selected><?php echo $term->title; ?></option>
+									<?php }else{ ?> 
+										<option value="<?php echo $term->id; ?>"><?php echo $term->title; ?></option>
+									<?php } ?>
+							<?php } ?>
+							
+						<?php }else{ ?> 
+							
+							<?php foreach($categories as $term){ ?> 
+								<?php if($term->parent != 0){ ?> 
+									<?php if($term->id == $content->category){ ?> 
+										<option value="<?php echo $term->id; ?>" selected><?php echo $term->title; ?></option>
+									<?php }else{ ?> 
+										<option value="<?php echo $term->id; ?>"><?php echo $term->title; ?></option>
+									<?php } ?>
 								<?php } ?>
 							<?php } ?>
+							
 						<?php } ?>
+						
+						
 					</select>
 				</div>
+				
+				
 			</div>
 			
 			<!-- TAGS -->

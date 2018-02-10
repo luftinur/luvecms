@@ -75,5 +75,6 @@ $route['admin/([a-z]+)'] = "admin/AdminArticles";
 
 /* FRONT */
 
-$route['([a-z]+)/(:num)'] = "WebContents";
-
+$route['([a-z]+)'] = "WebContents";
+$route['([a-z]+)/(:num)|([a-z]+)'] = "WebContents";
+$route['([a-z]+)/([a-z]+)/(:num)|([a-z]+)'] = "WebContents";

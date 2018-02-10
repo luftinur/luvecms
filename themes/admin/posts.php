@@ -43,8 +43,13 @@
 					<?php foreach($items as $index => $item): ?>
 						
 						<tr>
-							<td><input type="checkbox" id='bulkaction' name='bulkaction[]' value="<?php echo $item->id; ?>"></td>
-							<td><a href="<?php echo base_url().'admin/'.$postType.'/edit?id='.$item->id; ?>"><?php echo $item->title; ?></a></td>
+							<td>
+								<input type="checkbox" id='bulkaction' name='bulkaction[]' value="<?php echo $item->id; ?>">
+							</td>
+							<td>
+								<?php echo $item->picture != NULL ? '<i class="fa fa-image" style="color:#9f9f9f; margin-right:5px;"></i>' : '<span style="margin-right:20px; display:inline-block;"></span>'  ?>
+								<a href="<?php echo base_url().'admin/'.$postType.'/edit?id='.$item->id; ?>"><?php echo $item->title; ?></a>
+							</td>
 							<td>
 								<a href="javascript:;" data-status="<?php echo $item->status; ?>" title="Change Status" onclick="_status(this,<?php echo $item->id; ?>)" id="status" al class="status-<?php echo $item->status; ?>"><i class="fa fa-check"></i></a>
 								&nbsp;

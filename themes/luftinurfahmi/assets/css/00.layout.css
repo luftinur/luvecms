@@ -9,19 +9,63 @@ html{
 }
 
 body{
-	margin-bottom:50px;
+	margin-bottom:80px;
 	font-family:"Raleway", sans-serif;
 	
 }
-a:hover{
-	text-decoration:none;
+a{
+	color:#0C0C0C;
+	transition:color .3s ease-in-out;
 }
-
+a:hover{	
+	text-decoration:none;
+	color:#750000 !important;
+}
+img{
+	max-width:100%;
+}
+.section{
+	padding:2.5em 0;
+}
 .highlight{
 	font-family: 'Montserrat', sans-serif;
 	font-weight:500;
 }
 
+#header{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	z-index:999;
+	background-color:transparent;
+	border-radius:0;
+	border:transparent;
+	transition:all .3s ease-in-out;
+}
+
+#header.sticky{
+	background-color:rgba(255,255,255,.95);
+	border-bottom:1px solid #A9A9A9;
+}
+#header .nav.navbar-nav > li >  a{
+	color:#FFFFFF;
+	padding:20px 10px;
+}
+#header.sticky .nav.navbar-nav > li > a, #header.sticky ul.social > li > a{
+	color:#0C0C0C;
+}
+#header ul.social{
+	list-style:none;
+	margin-left:15px;
+	margin-bottom:0;
+}
+
+#header ul.social > li{
+	display:inline-block;
+	padding:20px 5px;
+}
+#header ul.social > li > a{font-size:16px; color:#FFFFFF;}
 .heading-section{
 	float:left;
 	max-width:360px;
@@ -32,18 +76,18 @@ a:hover{
 .heading-section > .lbl-icon{
 	background-color:#750000;
 	float:left;
-	width:80px;
-	height:80px;
-	line-height:85px;
+	width:60px;
+	height:60px;
+	line-height:65px;
 	color:#FFFFFF;
 	text-align:center;
 	margin-right:15px;
 }
 .heading-section > .lbl-icon > i{
-	font-size:2.5em;
+	font-size:2em;
 }
 .heading-section > .heading-text > .title{
-	margin-top:15px;
+	margin-top:10px;
 	font-weight:700;
 	font-family:"Montserrat", sans-serif;
 }
@@ -61,8 +105,13 @@ a:hover{
 #footer{
 	position:absolute;
 	bottom:0;
+	background-color:#0C0C0C;
 	padding:15px;
 	width:100%;
+	color:#FFFFFF;
+}
+#footer a{
+	color:#FFFFFF;
 }
 #footer .social{
 	list-style:none;
@@ -121,9 +170,128 @@ a:hover{
 }
 
 /* CLIENTS */
+
+#clients.section{
+}
 .clients{
+	
 }
 
 .clients-item{
-	padding:15px;
+	padding:10px 20px;
+}
+
+/* FREEBIES */
+#freebies.section{
+	background-color:#f2f2f2;
+}
+
+.content-item{
+	border-radius:6px;
+	-webkit-border-radius:6px;
+	overflow:hidden;
+	
+	-webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.3);
+	box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.3);
+	
+	transition:box-shadow .3s ease-in-out;
+	margin-bottom:20px;
+}
+.content-item:hover{
+	-webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.3);
+	box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.3);
+}
+.content-item > a.thumb{
+	position:relative;
+	display:block;
+}
+.content-item > .thumb > .overlay{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:5;
+	background-color:rgba(0,0,0,0.8);
+	opacity:0;
+	transition:opacity .5s ease-in-out;
+}
+.content-item > .thumb > .overlay > i{
+	
+	color:#FFFFFF;
+	font-size:18px;
+	display:block;
+	position:absolute;
+	left:0;
+	right:0;
+	margin-left:auto;
+	margin-right:auto;
+	top:50%;
+
+	width:30px;
+	height:30px;
+	transition:transform .3s ease-out;
+	
+}
+.content-item > .thumb:hover > .overlay > i{
+	transform:translateY(-50%);
+	-webkit-transform:translateY(-50%);
+}
+.content-item > .thumb:hover > .overlay{
+	opacity:1;
+}
+
+.content-item > a.thumb > img{
+	display:block;
+}
+.content-item .text{
+	padding:10px;
+	background-color:#FFFFFF;
+	overflow:hidden;
+}
+
+.content-item .text > .desc{
+	float:left;
+	max-width:80%;
+	margin-right:10px;
+}
+
+.content-item .text > .desc > .title{
+	margin-top:0;
+	margin-bottom:0;
+	font-weight:bold;
+	font-family:"Montserrat", sans-serif;
+	display:block;
+	white-space: nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+}
+.content-item .text > .desc > .short-desc{
+	display:block;
+	white-space: nowrap;
+	font-size:12px;
+	font-weight:400;
+	overflow:hidden;
+	color:#A9A9A9;
+	
+	text-overflow:ellipsis;
+}
+.content-item .text > .desc > .meta{
+	display:block;
+}
+.content-item .text > .desc > .meta > a{
+	color:#029BE8;
+	font-size:12px;
+}
+.content-item .text > .desc > .meta > a:hover{
+	color:#750000;
+}
+.content-item .text > .lbl{
+	font-size:12px;
+}
+.content-item .text > .lbl > span{
+	display:block;
+	color:#94C649;
 }

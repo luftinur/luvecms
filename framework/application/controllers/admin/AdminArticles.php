@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 class AdminArticles extends MY_AdminDataEntry {
 	
-	
+	protected $haveSubcategory = false;
 	
 	function __construct() {		
 		
@@ -14,10 +14,19 @@ class AdminArticles extends MY_AdminDataEntry {
 		parent::__construct();
 		
 		$this->data['items'] = $this->items;
+	
+		$postType = $this->MY_Model->getObject("SELECT * FROM #__post_type WHERE name='".$this->postType."'");
+		
+		if(!$postType->haveSubCategory){
+			$this->haveSubcategory = TRUE;
+		}
+		
+		$this->data['haveSubcategory'] = $this->haveSubcategory;
 		
 	}	
 
 	public function index(){
+		
 		parent::renderAdmin($this->data);
 	}
 	

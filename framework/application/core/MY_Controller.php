@@ -23,7 +23,7 @@ class MY_Controller extends CI_Controller{
 		
 		}
 		
-		$this->data['pageTitle'] = "";
+		//$this->data['pageTitle'] = "";
 		
 		
 		

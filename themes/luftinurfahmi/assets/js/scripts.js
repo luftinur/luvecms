@@ -43,6 +43,19 @@
 	});
 	
 	
+	var yourNavigation = $(".nav");
+	    stickyDiv = "sticky";
+	    header = $('#header').height();
+	
+	$(window).scroll(function() {
+	  if( $(this).scrollTop() > header ) {
+	    $('#header').addClass(stickyDiv);
+	  } else {
+	    $('#header').removeClass(stickyDiv);
+	  }
+	});
+	
+	
 	
 	
 })(jQuery);

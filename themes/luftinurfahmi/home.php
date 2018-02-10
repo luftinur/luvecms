@@ -3,16 +3,12 @@
 
 		<div class="box-nav-wrapper">
 			<div class="box">
-				<a href="#"> <span>Am</span> <span class="small">About Me</span> </a>
+				<a href="#home-about"> <span>Am</span> <span class="small">About Me</span> </a>
 			</div>
-			<div class="box blank"></div>
 			<div class="box blank"></div>
 
 			<div class="box">
-				<a href="#"> <span>W</span> <span class="small">Works</span> </a>
-			</div>
-			<div class="box">
-				<a href="#"> <span>F</span> <span class="small">Freebies</span> </a>
+				<a href="#freebies"> <span>F</span> <span class="small">Freebies</span> </a>
 			</div>
 			<div class="box blank"></div>
 			<div class="box">
@@ -35,7 +31,6 @@
 
 <div id="home-about" class="section">
 	<div class="container">
-		<div class="row">
 			<div class="col-md-8">
 
 				<div class="heading-section">
@@ -43,7 +38,7 @@
 						<i class="icon-profile-male"></i>
 					</div>
 					<div class="heading-text">
-						<h2 class="title">About<span>Who am I, What I do</span></h2>
+						<h2 class="h3 title">About<span>Who am I, What I do</span></h2>
 					</div>
 				</div>
 
@@ -85,9 +80,6 @@
 				</div>
 
 			</div>
-
-		</div>
-
 	</div>
 </div>
 
@@ -109,6 +101,77 @@
 				</div>
 				<div class="clients-item">
 					<img src="<?php echo $templateUrl . '/assets/images/services/php.jpg'; ?>"  alt="PHP" />
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="freebies" class="section">
+	<div class="container">
+		<div class="heading-section">
+			<div class="lbl-icon">
+				<i class="icon-documents"></i>
+			</div>
+			<div class="heading-text">
+				<h2 class="h3 title">Freebies<span>I like to make digital stuff, feel free to download</span></h2>
+			</div>
+		</div>
+		<div class="content-section">
+			
+			<div class="row">
+				
+				<?php foreach($freebies as $freeitem){ ?> 
+					
+					<div class="col-xs-6 col-md-3 ">
+						<div class="content-item">
+							<a class="thumb" href="<?php echo base_url().$freeitem->pathName.'/'.$freeitem->path; ?>">
+								<span class="overlay"><i class="fa fa-search"></i></span>
+								<img src="<?php echo base_url().'/uploads/library/'.$freeitem->picture; ?> " alt="<?php echo $freeitem->title; ?>" />
+							</a>
+							<div class="text">
+								<div class="desc">
+									<h3 class="title h5">
+										<a href="<?php echo base_url().$freeitem->pathName.'/'.$freeitem->path; ?>">
+											<?php echo $freeitem->title; ?>											
+										</a>
+									</h3>
+									<div class="short-desc">
+										<span><?php echo $freeitem->excerpt; ?></span>
+									</div>
+									<div class="meta">
+										<a href="<?php echo base_url().$freeitem->pathName; ?>"><?php echo $freeitem->categoryTitle; ?></a>
+									</div>								
+								</div>
+								<div class="lbl">
+									<span>FREE</span>
+								</div>
+							</div>							
+						</div>
+					</div>
+				
+				
+				<?php } ?>
+				
+				
+				
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<a href="<?php echo base_url().'freebies'; ?>" class="btn btn-default btn-success">More Freebies</a>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-12">
+					<ul class="home-freebies-categories">
+						<?php foreach($freebies_category as $freecategory){ ?> 
+							
+							<li><a href="<?php echo base_url().$freecategory->pathName; ?>"><?php echo $freecategory->title; ?></a></li>						
+						
+						<?php } ?>
+					</ul>
 				</div>
 			</div>
 		</div>
