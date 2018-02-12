@@ -38,19 +38,23 @@
 						<i class="icon-profile-male"></i>
 					</div>
 					<div class="heading-text">
-						<h2 class="h3 title">About<span>Who am I, What I do</span></h2>
+						<h2 class="h3 title">About<span>UI / UX, Web Developer</span></h2>
 					</div>
 				</div>
 
 				<div class="content-section">
 
 					<p>
-						Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,
-						nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate
-						cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.
-						cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio.
+						Internet things become a new world since it’s founded, 
+						then Im falling in love to <strong>develop websites</strong> with clean and elegant code.
+						And combining my ability to designing, <strong>UI/UX</strong> is my focus to create simple and useful experience. 
 					</p>
-
+					<p>
+						Currently I'm Fulltime Employee at <a href="http://www.limestones.co.id" target="_blank"><strong>Limestones Digital Agency</strong></a> as a <strong>Digital Developer</strong>
+						In between my busyness, Im writing blog and creating freebies resource on my website. 
+						Below is what I'am doing in my expertise
+					</p>
+	
 					<div class="services col-4">
 						<div class="service-item">
 							<i class="icon-browser"></i>
@@ -123,7 +127,7 @@
 				
 				<?php foreach($freebies as $freeitem){ ?> 
 					
-					<div class="col-xs-6 col-md-3 ">
+					<div class=" col-md-3 ">
 						<div class="content-item">
 							<a class="thumb" href="<?php echo base_url().$freeitem->pathName.'/'.$freeitem->path; ?>">
 								<span class="overlay"><i class="fa fa-search"></i></span>
@@ -176,4 +180,37 @@
 			</div>
 		</div>
 	</div>
+</div>
+
+<div id="blogs" class="section">
+	<div class="container">
+		<?php foreach($blogs as $blog){ ?> 
+			<div class="col-md-4">
+				<div class="content-item">
+							<a class="thumb" href="<?php echo base_url().$blog->pathName.'/'.$blog->path; ?>">
+								<span class="overlay"><i class="fa fa-search"></i></span>
+								<img src="<?php echo base_url().'/uploads/library/'.$blog->picture; ?> " alt="<?php echo $blog->title; ?>" />
+							</a>
+							<div class="text">
+								<div class="desc">
+									<h3 class="title h5">
+										<a href="<?php echo base_url().$blog->pathName.'/'.$blog->path; ?>">
+											<?php echo $blog->title; ?>											
+										</a>
+									</h3>
+									<div class="short-desc">
+										<span><?php echo $blog->excerpt; ?></span>
+									</div>
+									<div class="meta">
+										<a href="<?php echo base_url().$blog->pathName; ?>"><?php echo $blog->categoryTitle; ?></a>
+									</div>								
+								</div>
+								<div class="lbl">
+									<span><?php echo date("M/y", strtotime($blog->datePublished)); ?></span>
+								</div>
+							</div>							
+						</div>
+			</div>
+		<?php } ?>
+	</div>	
 </div>

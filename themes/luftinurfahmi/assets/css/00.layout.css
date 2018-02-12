@@ -11,15 +11,53 @@ html{
 body{
 	margin-bottom:80px;
 	font-family:"Raleway", sans-serif;
-	
+	font-size:14px;
+	/*letter-spacing: em;*/
 }
 a{
 	color:#0C0C0C;
 	transition:color .3s ease-in-out;
 }
-a:hover{	
+.btn{
+	border-radius:2px !important;
+}
+.btn-primary{
+	
+background: rgba(15,128,250,1);
+background: -moz-linear-gradient(45deg, rgba(15,128,250,1) 0%, rgba(0,92,191,1) 100%);
+background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(15,128,250,1)), color-stop(100%, rgba(0,92,191,1)));
+background: -webkit-linear-gradient(45deg, rgba(15,128,250,1) 0%, rgba(0,92,191,1) 100%);
+background: -o-linear-gradient(45deg, rgba(15,128,250,1) 0%, rgba(0,92,191,1) 100%);
+background: -ms-linear-gradient(45deg, rgba(15,128,250,1) 0%, rgba(0,92,191,1) 100%);
+background: linear-gradient(45deg, rgba(15,128,250,1) 0%, rgba(0,92,191,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f80fa', endColorstr='#005cbf', GradientType=1 );
+border:transparent;
+}
+.btn-primary:hover, .btn-primary:focus {
+
+	background:#005cbf !important;
+}
+.btn-success{
+	border:transparent;
+background: rgba(72,177,78,1);
+background: -moz-linear-gradient(45deg, rgba(72,177,78,1) 0%, rgba(65,155,69,1) 100%);
+background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(72,177,78,1)), color-stop(100%, rgba(65,155,69,1)));
+background: -webkit-linear-gradient(45deg, rgba(72,177,78,1) 0%, rgba(65,155,69,1) 100%);
+background: -o-linear-gradient(45deg, rgba(72,177,78,1) 0%, rgba(65,155,69,1) 100%);
+background: -ms-linear-gradient(45deg, rgba(72,177,78,1) 0%, rgba(65,155,69,1) 100%);
+background: linear-gradient(45deg, rgba(72,177,78,1) 0%, rgba(65,155,69,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#48b14e', endColorstr='#419b45', GradientType=1 );
+
+}
+.btn-success:hover{
+
+	background:#419b45 !important;
+}
+a:hover,
+#header.sticky .nav.navbar-nav > li > a:hover, 
+#header.sticky ul.social > li > a:hover{	
 	text-decoration:none;
-	color:#750000 !important;
+	color:#750000;
 }
 img{
 	max-width:100%;
@@ -31,7 +69,10 @@ img{
 	font-family: 'Montserrat', sans-serif;
 	font-weight:500;
 }
-
+.padding-10{
+	display:block;
+	padding:10px;
+}
 #header{
 	position:fixed;
 	top:0;

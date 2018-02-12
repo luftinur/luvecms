@@ -19,7 +19,6 @@ class MY_ContentBase extends MY_Controller{
 	function __construct(){
 		
 		parent::__construct();
-		
 		if($this->uri->segment(1) != NULL){
 			
 		$postType = $this->MY_Model->getObject("SELECT postType FROM #__taxonomy WHERE pathName='".trim($this->uri->segment(1))."'");
@@ -41,8 +40,8 @@ class MY_ContentBase extends MY_Controller{
 			 $segment2 = $this->uri->segment(2);
 			 $segment3 = $this->uri->segment(3);
 			 
+						
 			
-			 
 			 if(!is_numeric($segment2) && $segment2 != NULL){
 			 	
 				// is numeric then pagination run
@@ -57,6 +56,24 @@ class MY_ContentBase extends MY_Controller{
 						
 						if(!$this->data['content'] = $this->MY_Model->getObject($sql)){
 							show_404();
+						}else{
+							$this->load->helper('cookie');
+							// this line will return the cookie which has slug name
+							$check_visitor = $this->input->cookie(urldecode($this->data['content']->path), FALSE);
+						    $ip = $this->input->ip_address();
+						    if ($check_visitor == false) {
+						        $cookie = array(
+						            "name"   => urldecode($this->data['content']->path),
+						            "value"  => "$ip",
+						            "expire" =>  time() + 7200,
+						            "secure" => false
+						        );
+						        $this->input->set_cookie($cookie);
+						        $this->updateCounter(urldecode($this->data['content']->path));
+						    }
+							//echo $this->input->ip_address();
+							//echo session_id();
+							
 						}
 						
 					}else{
@@ -66,6 +83,14 @@ class MY_ContentBase extends MY_Controller{
 						$this->categoryName = $segment1.'/'.$segment2;
 						$filter = "term.pathName='".$segment1.'/'.$segment2."'";
 						$sql = $this->dataViews($filter);
+						
+						if($segment3 > 0){
+							$this->data['title'] = str_replace("/", " | ", $this->categoryName ). " | ". $segment3;
+						}else{
+							$this->data['title'] = str_replace("/", " | ", $this->categoryName );
+						}
+						
+			 
 						
 					}
 					
@@ -82,6 +107,13 @@ class MY_ContentBase extends MY_Controller{
 				$filter = " term.parent=".$parentId->id;
 				
 				$this->categoryName=$segment1;
+				
+				if($segment1 > 0){
+							$this->data['title'] = str_replace("/", " | ", $this->categoryName ). " | ". $segment3;
+						}else{
+							$this->data['title'] = str_replace("/", " | ", $this->categoryName );
+						}
+				
 				
 				$sql = $this->dataViews($filter);
 			 }			
@@ -109,6 +141,11 @@ class MY_ContentBase extends MY_Controller{
 				$offset = $segment2 ? $segment2 : 0;
 				$this->categoryName = $segment1;
 						
+				if($segment1 > 0){
+							$this->data['title'] = str_replace("/", " | ", $this->categoryName ). " | ". $segment3;
+						}else{
+							$this->data['title'] = str_replace("/", " | ", $this->categoryName );
+						}
 				$filter = "term.pathName='".$segment1."'";
 				$sql = $this->dataViews($filter);
 			 }
@@ -136,7 +173,6 @@ class MY_ContentBase extends MY_Controller{
 					$config['page_query_string'] = FALSE;
 					$config['query_string_segment'] = 'page';
 							
-							
 				 	$config["full_tag_open"] = '<ul class="pagination">';
 					$config["full_tag_close"] = '</ul>';	
 					$config["first_link"] = "&laquo;";
@@ -157,17 +193,27 @@ class MY_ContentBase extends MY_Controller{
 					$config['num_tag_close'] = '</li>';
 							
 					$this->pagination->initialize($config);
-						   
+					
+					
+					$this->data['totalPages'] = ceil($config['total_rows']/$this->contentsPerPage);
+					
 					$this->data['pagination'] = $this->pagination->create_links();
 					 
-					 
 				 }
-			 }	
+			 }
 		
 		}
 	}
 
-	
+	private function updateCounter($slug){
+		$this->db->where('path', urldecode($slug));
+	    $this->db->select('views');
+	    $count = $this->db->get('ln_posts')->row();
+	// then increase by one 
+	    $this->db->where('path', urldecode($slug));
+	    $this->db->set('views', ($count->views + 1));
+	    $this->db->update('ln_posts');
+	}
 
 
 	protected function dataViews($filter = ''){
@@ -188,10 +234,14 @@ class MY_ContentBase extends MY_Controller{
 		
 	}
 	
-	protected function getPosts($postType, $len= 10)
+	protected function getPosts($postType, $len= 10, $category = '')
 	{
-			
-		$result = $this->MY_Model->getObjects($this->dataSql. " AND item.postType='".$postType."'"." LIMIT 0,". $len);
+		if($category != ''){
+			$result = $this->MY_Model->getObjects($this->dataSql. " AND term.pathName='$category' AND item.postType='".$postType."'"." LIMIT 0,". $len);
+		}else{
+			$result = $this->MY_Model->getObjects($this->dataSql. " AND item.postType='".$postType."'"." LIMIT 0,". $len);
+		}
+		
 									
 		return $result;
 		

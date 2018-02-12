@@ -20,6 +20,9 @@ class SiteIndex extends MY_ContentBase{
 		$this->data['contentFilename'] = "home";
 		$this->data['freebies'] = $this->getPosts('freebies', 4);
 		$this->data['freebies_category'] = $this->MY_Model->getObjects("SELECT * FROM #__taxonomy WHERE postType='freebies' AND status = 1");		
+		
+		$this->data['blogs'] = $this->getPosts("posts",3, 'blogs');
+		
 		parent::render($this->data);		
 		
 		

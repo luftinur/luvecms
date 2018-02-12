@@ -44,7 +44,7 @@
 				}
 			
 		} ?>		
-		
+		<link rel="canonical" href="<?php echo base_url().uri_string(); ?>" >
 		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
 		<link rel="shortcut icon" href="/favicon.ico">
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -87,16 +87,16 @@
 				<ul class="nav navbar-nav">
 					<li><a href="<?php echo base_url(); ?>"><i class="fa fa-home"></i></a></li>
 					<li>
-						<a href="<?php echo base_url().'/freebies'; ?>">Freebies</a>
+						<a href="<?php echo base_url().'freebies'; ?>">Freebies</a>
 					</li>
 					<li>
-						<a href="<?php echo base_url().'/blogs'; ?>">Blogs</a>
+						<a href="<?php echo base_url().'blogs'; ?>">Blogs</a>
 					</li>
 				</ul>	
 				<ul class="social pull-right">
-					<li><a href="http://www.linkedin.com/in/luftinurfahmi"><i class="fab fa-linkedin"></i></a></li>
-					<li><a href="https://github.com/luftinur"><i class="fab fa-github"></i></a></li>
-					<li><a href="https://www.behance.net/luftinurfahmi"><i class="fab fa-behance"></i></a></li>
+					<li><a target="_blank" href="http://www.linkedin.com/in/luftinurfahmi"><i class="fab fa-linkedin"></i></a></li>
+					<li><a target="_blank" href="https://github.com/luftinur"><i class="fab fa-github"></i></a></li>
+					<li><a target="_blank" href="https://www.behance.net/luftinurfahmi"><i class="fab fa-behance"></i></a></li>
 						
 				</ul>			
 			</div>
@@ -112,9 +112,9 @@
 				</div>
 				<div class="col-md-6">
 					<ul class="social">
-						<li><a href="http://www.linkedin.com/in/luftinurfahmi"><i class="fab fa-linkedin"></i></a></li>
-						<li><a href="https://github.com/luftinur"><i class="fab fa-github"></i></a></li>
-						<li><a href="https://www.behance.net/luftinurfahmi"><i class="fab fa-behance"></i></a></li>
+						<li><a target="_blank" href="http://www.linkedin.com/in/luftinurfahmi"><i class="fab fa-linkedin"></i></a></li>
+						<li><a target="_blank" href="https://github.com/luftinur"><i class="fab fa-github"></i></a></li>
+						<li><a target="_blank" href="https://www.behance.net/luftinurfahmi"><i class="fab fa-behance"></i></a></li>
 						
 					</ul>
 				</div>
