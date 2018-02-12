@@ -73,8 +73,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
-// user luftinur_cms : ;TW?(VRrN3Td
-// db luftinur_cms
 
 $db['default'] = array(
 	'dsn'	=> '',

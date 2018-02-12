@@ -79,9 +79,14 @@
 		<!-- Google Tag Manager (noscript) -->
 		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGRHVK4"
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		
 		<!-- End Google Tag Manager (noscript) -->
-
+		<a href="javascript:;" id="toggleMenu">
+			<span></span>
+		</a>	
+		
 		<div id="header" class="navbar navbar-default">
+		
 			<div class="container">
 				
 				<ul class="nav navbar-nav">
@@ -100,6 +105,8 @@
 						
 				</ul>			
 			</div>
+			
+			
 		</div>
 		
 		<?php $this->load->view($this->config->item("theme").'/'.$contentFilename); ?>
@@ -119,6 +126,7 @@
 					</ul>
 				</div>
 			</div>
+			
 		</div>
 	
 		

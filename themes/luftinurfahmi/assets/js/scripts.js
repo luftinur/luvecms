@@ -55,7 +55,18 @@
 	  }
 	});
 	
-	
+	if($("#toggleMenu").length){
+		
+		
+		
+		$("#toggleMenu").on("click", function(){
+			$(this).toggleClass("active");
+			$("#header").toggleClass("active");
+		});
+		
+		
+		
+	}
 	
 	
 })(jQuery);

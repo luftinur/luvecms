@@ -110,7 +110,7 @@
 		</div>
 	</div>
 </div>
-
+<?php if($freebies){ ?>
 <div id="freebies" class="section">
 	<div class="container">
 		<div class="heading-section">
@@ -181,7 +181,8 @@
 		</div>
 	</div>
 </div>
-
+ <?php } ?>
+<?php if($blogs){ ?> 
 <div id="blogs" class="section">
 	<div class="container">
 		<?php foreach($blogs as $blog){ ?> 
@@ -214,3 +215,4 @@
 		<?php } ?>
 	</div>	
 </div>
+<?php } ?>
