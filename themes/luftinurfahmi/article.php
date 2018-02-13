@@ -23,17 +23,34 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-8 article">
-					<div class="image-preview">
-						<img src="<?php echo base_url().'uploads/library/'.$content->picture; ?>" alt="<?php echo $content->title; ?>" />
-					</div>
-					
-					<div class="content-body">
-						<div class="body">
-							
-						<?php echo $content->body; ?>
+				<div class="col-md-8 article detail">
+						<div class="meta">
+							<span class="datepublish"><i class="fa fa-calendar-alt"></i> <?php echo date("M d, Y", strtotime($content->datePublished)); ?></span>
+							<span class="author"><i class="fa fa-user"></i> <?php echo $content->first_name == 'Admin' ? "Lufti" : "" ; ?></span>
 						</div>
-					</div>					
+						<div class="image-preview">
+							<img src="<?php echo base_url().'uploads/library/'.$content->picture; ?>" alt="<?php echo $content->title; ?>" />
+						</div>
+						<div class="content">
+							<div class="social-share">
+								<ul>
+									<li>
+										<a id="shareFacebook" href="javascript:;"><i class="fab fa-facebook-f"></i></a>
+									</li>
+									<li>
+										<a id="shareTwitter" href="javascript:;"><i class="fab fa-twitter"></i></a>
+									</li>
+								</ul>
+							</div>
+							
+							<div class="content-body">
+								<div class="body">
+									
+								<?php echo $content->body; ?>
+								</div>
+							</div>
+						
+						</div>					
 				</div>
 				<div class="col-md-4">
 					
@@ -43,4 +60,8 @@
 		</div>
 	</div>
 </div>
-	
+	<script>
+		$(document).ready(function(){
+			$(".social-share").stick_in_parent();
+		});
+	</script>

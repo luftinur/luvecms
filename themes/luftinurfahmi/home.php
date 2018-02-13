@@ -20,9 +20,7 @@
 			<h3>Lufti Nurfahmi</h3>
 			<h1><strong>UX & Web</strong> Developer</h1>
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-				sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-				Ut enim ad minim veniam.
+				<em>"Websites promote you 24/7: No employee will do that." - Paul Cookson</em>
 			</p>
 		</div>
 
@@ -51,7 +49,6 @@
 					</p>
 					<p>
 						Currently I'm Fulltime Employee at <a href="http://www.limestones.co.id" target="_blank"><strong>Limestones Digital Agency</strong></a> as a <strong>Digital Developer</strong>
-						In between my busyness, Im writing blog and creating freebies resource on my website. 
 						Below is what I'am doing in my expertise
 					</p>
 	

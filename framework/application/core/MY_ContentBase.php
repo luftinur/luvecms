@@ -12,9 +12,12 @@ class MY_ContentBase extends MY_Controller{
 		$contentsPerPage = 8;
 		
 		
-	private $dataSql = " SELECT item.*, term.parent as parentCategory, term.pathName, term.title as categoryTitle, term.id as categoryId FROM #__posts as item 
-						 LEFT JOIN #__taxonomy as term on item.category = term.id
-						 WHERE item.status=1";
+	private $dataSql = " 
+						SELECT item.*,user.first_name, term.parent as parentCategory, term.pathName, term.title as categoryTitle, term.id as categoryId 
+						FROM #__posts as item 
+						LEFT JOIN #__taxonomy as term on item.category = term.id
+						LEFT JOIN #__users as user on item.authorId = user.id
+						WHERE item.status=1";
 					
 	function __construct(){
 		

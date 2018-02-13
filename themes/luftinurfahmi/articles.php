@@ -12,11 +12,11 @@
 		<div class="container">		
 			
 			<div class="padding-10"></div>
-			<div class="col-md-8">
+			<div class="col-md-7">
 				<div id="contents" class="row">
 					<?php foreach($items as $item){ ?> 
 						
-						<div class="item-pagination col-md-6">
+						<div class="item-pagination col-md-12">
 							<div class="content-item">
 								<a class="thumb" href="<?php echo base_url().$item->pathName.'/'.$item->path; ?>">
 									<span class="overlay"><i class="fa fa-search"></i></span>
@@ -33,8 +33,12 @@
 											<span><?php echo $item->excerpt; ?></span>
 										</div>						
 									</div>
-									
-								</div>							
+									<div class="meta">
+										<span class="datepublish"><i class="fa fa-calendar-alt"></i> <?php echo date("M d, Y", strtotime($item->datePublished)); ?></span>
+										<span class="author"><i class="fa fa-user"></i> <?php echo $item->first_name == 'Admin' ? "Lufti" : "" ; ?></span>
+									</div>	
+								</div>		
+															
 							</div>
 						</div>
 					
@@ -52,8 +56,13 @@
 				
 				
 			</div>
-			<div class="col-md-4">
-				
+			<div class="col-md-4 col-md-offset-1">
+				<div class="widget">
+					<h3 class="h4 title">Recent Posts</h3>
+					<ul>
+						
+					</ul>
+				</div>
 			</div>
 	</div>
 	
