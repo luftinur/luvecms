@@ -59,19 +59,11 @@
 		</script>
 		<!-- End Google Tag Manager -->
 		
-		<script type="application/ld+json">
-		{
-		  "@context": "http://schema.org",
-		  "@type": "Person",
-		  "name": "Lufti Nurfahmi",
-		  "url": "<?php echo base_url(); ?>",
-		  "sameAs": [
-			"https://www.behance.net/luftinurfahmi",
-			"https://github.com/luftinur",
-			"http://www.linkedin.com/in/luftinurfahmi",
-		  ]
-		}
-		</script>
+		<?php if(isset($google_richcard)){ 			
+			
+			echo $google_richcard;
+		
+		} ?>
 		
 		
 		

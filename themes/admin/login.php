@@ -7,12 +7,12 @@
 			<form method="post" action="<?php echo base_url().'admin/login'; ?>">
 				<div class="form-group">					
 					<label>Email Address</label>
-					<input type="email" value="admin@admin.com" name="identity" class="form-control" id="identity" placeholder="">    
+					<input type="email" value="" name="identity" class="form-control" id="identity" placeholder="">    
 					
 				</div>
 				<div class="form-group">					
 					<label>Password</label>
-					<input type="password" value="password" name="password" class="form-control" id="password" placeholder="">    
+					<input type="password" value="" name="password" class="form-control" id="password" placeholder="">    
 					
 				</div>
 				

@@ -53,7 +53,11 @@
 							<td>
 								<a href="javascript:;" data-status="<?php echo $item->status; ?>" title="Change Status" onclick="_status(this,<?php echo $item->id; ?>)" id="status" al class="status-<?php echo $item->status; ?>"><i class="fa fa-check"></i></a>
 								&nbsp;
-								<a href="javascript:;" id="trash" title="Move To Trash" onclick="_trash(this, <?php echo $item->id; ?>)"><i class="fa fa-trash-o"></i></a>
+								<?php if($item->status == 2){ ?> 
+									<a href="javascript:;" id="trash" title="Move To Trash" onclick="_permanentDelete(this, <?php echo $item->id; ?>)"><i class="fa fa-trash-o"></i></a>
+								<?php }else{ ?> 
+									<a href="javascript:;" id="trash" title="Move To Trash" onclick="_trash(this, <?php echo $item->id; ?>)"><i class="fa fa-trash-o"></i></a>
+								<?php } ?>
 							</td>
 							<td><?php echo $item->username; ?></td>
 							<td><?php echo $item->categoryTitle; ?></td>
@@ -85,6 +89,10 @@
 	function _trash(a, id){
 		
 		move_to_trash(a, id, "admin/<?php echo $postType; ?>");
+		
+	}
+	
+	function _permanentDelete(a, id){
 		
 	}
 </script>

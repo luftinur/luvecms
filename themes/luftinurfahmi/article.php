@@ -35,10 +35,10 @@
 							<div class="social-share">
 								<ul>
 									<li>
-										<a id="shareFacebook" href="javascript:;"><i class="fab fa-facebook-f"></i></a>
+										<a id="shareFacebook" onclick="window.open('https://www.facebook.com/dialog/feed?app_id=1189761114404793&display=popup&caption=Palmia&link=<?php echo base_url().$content->pathName.'/'.$content->path; ?>&redirect_uri=<?php echo base_url().$content->pathName.'/'.$content->path; ?>', 'facebook-share', 'width=600, height=500');" href="javascript:;"><i class="fab fa-facebook-f"></i></a>
 									</li>
 									<li>
-										<a id="shareTwitter" href="javascript:;"><i class="fab fa-twitter"></i></a>
+										<a id="shareTwitter" onclick="window.open('https://twitter.com/home?status=Palmia%20http://www.palmia.co.id%20via%20@luftinurfahmi,&related=Lufti','ttshare','width=600, height=500')" href="javascript:;"><i class="fab fa-twitter"></i></a>
 									</li>
 								</ul>
 							</div>
