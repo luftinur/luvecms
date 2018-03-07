@@ -136,7 +136,25 @@ class MY_ContentBase extends MY_Controller{
 				
 				if(!$this->data['content'] = $this->MY_Model->getObject($sql)){
 					show_404();
-				}
+				}else{
+							$this->load->helper('cookie');
+							// this line will return the cookie which has slug name
+							$check_visitor = $this->input->cookie(urldecode($this->data['content']->path), FALSE);
+						    $ip = $this->input->ip_address();
+						    if ($check_visitor == false) {
+						        $cookie = array(
+						            "name"   => urldecode($this->data['content']->path),
+						            "value"  => "$ip",
+						            "expire" =>  time() + 7200,
+						            "secure" => false
+						        );
+						        $this->input->set_cookie($cookie);
+						        $this->updateCounter(urldecode($this->data['content']->path));
+						    }
+							//echo $this->input->ip_address();
+							//echo session_id();
+							
+						}
 					
 					
 			 }else{

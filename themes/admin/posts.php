@@ -63,6 +63,7 @@
 							<td><?php echo $item->categoryTitle; ?></td>
 							<td><?php echo date("d-M-Y", strtotime($item->datePublished)); ?></td>
 							<td><?php echo date("d-M-Y", strtotime($item->dateModified)); ?></td>
+							<td><i class="fa fa-eye"></i> <?php echo $item->views; ?>
 						</tr>
 						
 						 

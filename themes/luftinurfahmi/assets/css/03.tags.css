@@ -1,0 +1,12 @@
+#tags ul.taglist{
+	padding : 1em;
+	list-style:none;
+
+}
+
+
+#tags ul.taglist > li{
+	
+	display:inline-block;
+
+}

@@ -1,4 +1,5 @@
 <?php
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 
 class WebContents extends MY_ContentBase{
@@ -23,10 +24,30 @@ class WebContents extends MY_ContentBase{
 		
 		if($this->content){
 			
+			$richcard = $this->data['content'];
+			
+			$dataRichCard = array(
+			
+				"title" => $richcard->title,
+				"images" => array(
+						base_url().'uploads/library/'.$richcard->picture
+					),
+				"authorname" => $richcard->first_name == 'Admin' ? "Lufti" : "",
+				"publisherName" => "Lufti Nurfahmi",
+				"publisherLogo" => base_url().'themes/luftinurfahmi/assets/images/logo.png',
+				"datePublished" => date(DATE_ISO8601, strtotime($richcard->datePublished)),
+				"dateModified" => date(DATE_ISO8601, strtotime($richcard->dateModified)),
+				"excerpt" => $richcard->excerpt
+			);
+			
+			$this->data['google_richcard'] = GoogleRichCard::RichCardArticle($dataRichCard, base_url().$richcard->pathName.'/'.$richcard->path, $authortype = 'Person');
+			
 			//$this->data['breadcrumbs'] = explode("/", uri_string());
 			$uriString = explode("/",uri_string());
 			$this->data['breadcrumbs'] = array();
 			
+			$this->data['tag'] = $this->MY_Model->getObjects("SELECT tag.* FROM #__tags as tag LEFT JOIN #__tags_rel as tagging on tag.id = tagging.tagId WHERE tagging.postId = ".$this->data['content']->id);
+ 			
 			if(isset($uriString)){
 				$countUri = count($uriString);
 				foreach ($uriString as $index => $val) {

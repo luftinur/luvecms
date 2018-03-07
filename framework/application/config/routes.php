@@ -74,6 +74,8 @@ $route['admin/([a-z]+)/(edit|new)'] = "admin/AdminArticles";
 $route['admin/([a-z]+)'] = "admin/AdminArticles";
 
 /* FRONT */
+$route['tags'] = "TagContents";
+$route['tags/(:any)'] = "TagContents";
 
 $route['([a-z]+)'] = "WebContents";
 $route['([a-z]+)/(:any)'] = "WebContents";

@@ -49,7 +49,18 @@
 								<?php echo $content->body; ?>
 								</div>
 							</div>
-						
+							<?php if($tag){ ?> 
+								<div id="tags">
+									<ul class="taglist">
+									<li><sup>Tags : </sup></li>
+										<?php foreach($tag as $tagging){ ?> 
+											<li>
+												<a href="<?php echo base_url().'tags/'.$tagging->tagName; ?>" class="btn btn-default btn-sm"><?php echo $tagging->tagTitle; ?> </a>
+											</li>
+										<?php } ?>
+									</ul>
+								</div>
+							<?php } ?>
 						</div>					
 				</div>
 				<div class="col-md-4">
@@ -62,6 +73,35 @@
 </div>
 	<script>
 		$(document).ready(function(){
-			$(".social-share").stick_in_parent();
+			//$(".social-share").stick_in_parent();
+		
+			    var window_width = jQuery( window ).width();
+
+					if (window_width < 768) {
+					  jQuery(".social-share").trigger("sticky_kit:detach");
+					} else {
+					  make_sticky();
+					}
+					
+					jQuery( window ).resize(function() {
+
+					window_width = jQuery( window ).width();
+
+					  if (window_width < 768) {
+						jQuery(".social-share").trigger("sticky_kit:detach");
+					  } else {
+						make_sticky();
+					  }
+
+					});
+
+					function make_sticky() {
+					  jQuery(".social-share").stick_in_parent({
+						parent: '.content'
+					  });
+					}
+		
 		});
+		
+		
 	</script>
