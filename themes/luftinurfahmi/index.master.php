@@ -81,13 +81,9 @@
 		
 		<div id="header" class="navbar navbar-default">
 		
-			<div class="container">
-				
+			<div class="container">				
 				<ul class="nav navbar-nav">
 					<li><a href="<?php echo base_url(); ?>"><i class="fa fa-home"></i></a></li>
-					<li>
-						<a href="<?php echo base_url().'freebies'; ?>">Freebies</a>
-					</li>
 					<li>
 						<a href="<?php echo base_url().'blogs'; ?>">Blogs</a>
 					</li>

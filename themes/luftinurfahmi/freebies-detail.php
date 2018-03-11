@@ -33,7 +33,11 @@
 								<?php echo $content->excerpt; ?>
 							</div>
 							<div class="action">
+								
 								<a href="javascript:;" id="btnDownload" class="btn btn-success btn-lg">Download Free</a>
+								<?php if($content->metaData['metaPreviewLink'] == 'link'){ ?>
+									<a href="javascript:;" id="btnDownload" class="btn btn-success btn-lg">Live Preview Free</a>
+								<?php } ?>
 							</div>
 							<div class="meta">
 								<div><i class="fa fa-tag"></i> <a href="<?php echo base_url().$content->pathName; ?>"><?php echo $content->categoryTitle; ?></a></div>

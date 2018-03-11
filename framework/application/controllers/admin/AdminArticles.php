@@ -32,9 +32,19 @@ class AdminArticles extends MY_AdminDataEntry {
 	
 	protected function onDataview()
 	{
+		
 		$this->data['pageTitle'] = $this->postType;
 		
-		$this->data['contentFilename'] = 'posts';
+		
+		if($this->postType == 'freebies'){
+			$this->data['contentFilename'] = 'freebies';
+			
+		}else{
+			
+			$this->data['contentFilename'] = 'posts';
+		}
+		
+		
 		
 		if(isset($_GET['filter'])){
 			
@@ -91,8 +101,15 @@ class AdminArticles extends MY_AdminDataEntry {
 		
 		$this->data['pageStyle'][] = addStyle(base_url().'themes/'.$this->config->item('admintheme').'/vendor/jquery.tagsinput.min.css');
 		
+		
+		if($this->postType == 'freebies'){
+			$this->data['contentFilename'] = 'freebies-edit';
 			
-		$this->data['contentFilename'] = 'posts-edit';
+		}else{
+			
+			$this->data['contentFilename'] = 'posts-edit';
+		}	
+		
 		
 		$this->data['content'] = $this->MY_Model->getObject("
 		SELECT item.*, term.id as categoryId, term.title as categoryTitle, term.pathName as categoryName
@@ -142,7 +159,15 @@ class AdminArticles extends MY_AdminDataEntry {
 		
 		$this->data['pageStyle'][] = addStyle(base_url().'themes/'.$this->config->item('admintheme').'/vendor/jquery.tagsinput.min.css');
 			
-		$this->data['contentFilename'] = 'posts-edit';
+		
+		if($this->postType == 'freebies'){
+			$this->data['contentFilename'] = 'freebies-edit';
+			
+		}else{
+			
+			$this->data['contentFilename'] = 'posts-edit';
+		}	
+		
 		$this->data['pageTitle'] = "New ".$this->postType;
 		$this->content = new stdClass();
 		

@@ -178,6 +178,31 @@
 				</div>
 			</div>
 			
+			<div class="panel panel-freebies panel-default">
+				
+				<div class="panel-heading">
+					Download Link
+				</div>
+				
+				<div class="panel-body">				
+					<input type="text" name="metaDownloadLink" value="<?php echo @$content->postMeta['metaDownloadLink']; ?>"  class="form-control" id="metaDownloadLink" />
+				</div>
+				
+			</div>
+			
+			<div class="panel panel-freebies panel-default">
+				
+				<div class="panel-heading">
+					Preview Link
+				</div>
+				
+				<div class="panel-body">				
+					<input type="text" name="metaPreviewLink" value="<?php echo @$content->postMeta['metaPreviewLink']; ?>"  class="form-control" id="metaPreviewLink" />
+				</div>
+				
+			</div>	
+			
+			
 			
 		</div>
 	</div>
@@ -233,6 +258,7 @@ tinymce.init({
 		postData.status = 0;
 		savePost();
 	});
+	
 	// save post
 	function savePost(){
 		var inputTitle = $("#inputTitle"),
@@ -253,8 +279,7 @@ tinymce.init({
 		if($(".panel-freebies").length){
 			postData.postMeta['metaDownloadLink'] = $("#metaDownloadLink").val().trim();
 			postData.postMeta['metaPreviewLink'] = $("#metaPreviewLink").val().trim();
-		}
-		
+		}		
 		
 		
 		

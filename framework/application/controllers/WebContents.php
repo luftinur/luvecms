@@ -40,6 +40,8 @@ class WebContents extends MY_ContentBase{
 				"excerpt" => $richcard->excerpt
 			);
 			
+			$this->data['content']->metaData = unserialize($this->data['content']->postMeta);
+			
 			$this->data['google_richcard'] = GoogleRichCard::RichCardArticle($dataRichCard, base_url().$richcard->pathName.'/'.$richcard->path, $authortype = 'Person');
 			
 			//$this->data['breadcrumbs'] = explode("/", uri_string());
